@@ -7,8 +7,8 @@ public class ShooterShoot extends CommandBase {
     private Shooter shooter;
     private double speed;
 
-    public ShooterShoot(double speed) {
-        shooter = new Shooter();
+    public ShooterShoot(double speed, Shooter shootiboi) {
+        shooter = shootiboi;
         this.speed = speed;
     }
 

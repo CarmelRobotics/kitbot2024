@@ -51,8 +51,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     m_drivetrain.setDefaultCommand(new Drive(m_drivetrain, j_joystick));
-    shoot.whileHeld(new ShooterShoot(1));
-    eat.whileHeld(new ShooterShoot(-1));
+    shoot.whileHeld(new ShooterShoot(1, schoolshooter));
+    eat.whileHeld(new ShooterShoot(-1), schoolshooter);
   }
 
   /**

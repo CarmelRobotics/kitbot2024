@@ -1,14 +1,14 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Shooter;
 
-public class ShooterShoot extends CommandBase {
+public class ShooterShoot extends Command {
     private Shooter shooter;
     private double speed;
 
-    public ShooterShoot(double speed, Shooter shootiboi) {
-        shooter = shootiboi;
+    public ShooterShoot(double speed) {
+        shooter = new Shooter();
         this.speed = speed;
     }
 

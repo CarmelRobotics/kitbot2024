@@ -29,7 +29,7 @@ public class RobotContainer {
   private final JoystickButton eat;
   // private final JoystickButton b_cylinder_up;
   // private final JoystickButton b_cylinder_dn;
-  private final Shooter schoolshooter =  new Shooter(); 
+  private final Shooter shootiboi =  new Shooter(); 
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -52,8 +52,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     
     m_drivetrain.setDefaultCommand(new Drive(m_drivetrain, j_joystick));
-    shoot.onTrue(new ShooterShoot(j_joystick.getZ(), schoolshooter)).onFalse(new ShooterShoot(0, schoolshooter));
-    eat.onTrue(new ShooterShoot(-1, schoolshooter)).onFalse(new ShooterShoot(0, schoolshooter));
+    shoot.onTrue(new ShooterShoot(j_joystick.getZ(), shootiboi)).onFalse(new ShooterShoot(0, shootiboi));
+    eat.onTrue(new ShooterShoot(-1, shootiboi)).onFalse(new ShooterShoot(0, shootiboi));
   }
 
   /**

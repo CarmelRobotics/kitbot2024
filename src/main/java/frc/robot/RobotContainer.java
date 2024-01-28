@@ -50,9 +50,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    
     m_drivetrain.setDefaultCommand(new Drive(m_drivetrain, j_joystick));
-    shoot.toggleOnTrue(new ShooterShoot(1));
-    eat.toggleOnTrue(new ShooterShoot(-1));
+    shoot.onTrue(new ShooterShoot(j_joystick.getZ())).onFalse(new ShooterShoot(0));
+    eat.onTrue(new ShooterShoot(-1)).onFalse(new ShooterShoot(0));
   }
 
   /**

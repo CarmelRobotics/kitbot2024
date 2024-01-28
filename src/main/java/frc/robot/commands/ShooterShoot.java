@@ -7,8 +7,8 @@ public class ShooterShoot extends Command {
     private Shooter shooter;
     private double speed;
 
-    public ShooterShoot(double speed) {
-        shooter = new Shooter();
+    public ShooterShoot(double speed, Shooter shootyboi) {
+        shooter = shootyboi;
         this.speed = speed;
     }
 

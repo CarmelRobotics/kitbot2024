@@ -8,10 +8,12 @@ import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Shooter extends SubsystemBase {
+  // Shooter Motors
   private VictorSP motor1;
   private VictorSP motor2;
-  /** Creates a new ExampleSubsystem. */
+
   public Shooter() {
+    // Init motor objects and assign where the are connected
     motor1 = new VictorSP(4);
     motor2 = new VictorSP(5);
   }
@@ -22,6 +24,7 @@ public class Shooter extends SubsystemBase {
   }
 
   public void set(double speed) {
+    // Go speed
     motor1.set(speed);
     motor2.set(speed);
   }

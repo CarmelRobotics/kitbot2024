@@ -22,19 +22,17 @@ import frc.robot.subsystems.Shooter;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
+  // Drivetrain Varyables
   private final DriveTrain m_drivetrain = new DriveTrain();
   private final Joystick j_joystick = new Joystick(Constants.Controls.CONTROLS_USB_JOYSTICK);
+  // Shooter Varyables
   private final JoystickButton shoot;
   private final JoystickButton eat;
-  // private final JoystickButton b_cylinder_up;
-  // private final JoystickButton b_cylinder_dn;
   private final Shooter shootiboi =  new Shooter(); 
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-   // b_cylinder_up = new JoystickButton(j_joystick, Constants.Controls.CONTROLS_BUTTON_CYLINDER_UP);
-    //b_cylinder_dn = new JoystickButton(j_joystick, Constants.Controls.CONTROLS_BUTTON_CYLINDER_DN);
+    // Shooter Joystick button Detection 
     shoot = new JoystickButton(j_joystick, 3);
     eat = new JoystickButton(j_joystick,4);
     
@@ -50,8 +48,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    
+    // drivetrain init
     m_drivetrain.setDefaultCommand(new Drive(m_drivetrain, j_joystick));
+    // Init shooter functions for toggle
     shoot.onTrue(new ShooterShoot(j_joystick.getZ(), shootiboi)).onFalse(new ShooterShoot(0, shootiboi));
     eat.onTrue(new ShooterShoot(-1, shootiboi)).onFalse(new ShooterShoot(0, shootiboi));
   }

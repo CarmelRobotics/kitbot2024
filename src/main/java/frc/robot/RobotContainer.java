@@ -50,9 +50,11 @@ public class RobotContainer {
   private void configureButtonBindings() {
     // drivetrain init
     m_drivetrain.setDefaultCommand(new Drive(m_drivetrain, j_joystick));
+    ShooterShoot shootiboiShoot = new ShooterShoot(1, shootiboi);
+    ShooterShoot shootiboiEat = new ShooterShoot(1, shootiboi);
     // Init shooter functions for toggle
-    shoot.onTrue(new ShooterShoot(j_joystick.getZ(), shootiboi)).onFalse(new ShooterShoot(0, shootiboi));
-    eat.onTrue(new ShooterShoot(-1, shootiboi)).onFalse(new ShooterShoot(0, shootiboi));
+    shoot.toggleOnTrue(shootiboiShoot);
+    eat.toggleOnTrue(shootiboiEat);
   }
 
   /**
